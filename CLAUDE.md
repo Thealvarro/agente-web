@@ -78,10 +78,17 @@ Avísale en qué vas con mensajes cortos ("Listo el inicio, sigo con los servici
 Pregúntale si quiere publicarla. Si dice que sí:
 
 1. Pasa `docs/checklists/seguridad.md` completo y corrige lo que falle.
-2. Revisa que tenga Node.js 18 o más con `node --version`. Si no lo tiene, guíalo a instalar la versión LTS desde https://nodejs.org.
+2. Revisa que tenga Node.js 20 o más con `node --version`. Si no lo tiene, guíalo a instalar la versión LTS desde https://nodejs.org.
 3. El inicio de sesión en Vercel lo hace él: pídele que escriba `! npx vercel login` en este chat y que termine el ingreso en el navegador (la cuenta es gratis). Tú nunca escribes ni pides contraseñas.
-4. Publica desde `sitio/` con `npx vercel deploy --prod --yes` y entrégale el link.
-5. Cuéntale que puede ponerle un dominio propio desde Vercel (proyecto → Settings → Domains) y que cada cambio futuro se publica repitiendo el paso 4.
+4. Acuerda con él el nombre del proyecto: el nombre del negocio en minúsculas, sin tildes y con guiones (`barberia-don-lucho`). Será parte de su dirección (`barberia-don-lucho.vercel.app`).
+5. La primera vez, desde `sitio/`:
+   - `npx vercel project create <nombre>`. Si responde que el nombre ya existe, propón otro (por ejemplo, con la comuna) y repite.
+   - `npx vercel link --yes --project <nombre>`
+   - `npx vercel deploy --prod --yes`
+
+   Nunca publiques sin crear y enlazar el proyecto antes: quedaría con el nombre "sitio" y otra página podría pisarla.
+6. Pon la dirección final en `og:url` (y en `og:image`, si hay foto para compartir) dentro de `index.html`, y vuelve a publicar con `npx vercel deploy --prod --yes`. Así la vista previa sale bien al compartir el link por WhatsApp.
+7. Entrégale el link. Cuéntale que puede ponerle un dominio propio desde Vercel (proyecto → Settings → Domains) y que cada cambio futuro se publica con `npx vercel deploy --prod --yes` desde `sitio/`.
 
 ## Momentos de decisión
 
