@@ -1,0 +1,193 @@
+/* ============================================================
+   DISEÑO — CAMBIAR con los valores de sitio/diseno.md
+   Todo lo demás de este archivo se ajusta solo a estas variables.
+   ============================================================ */
+:root {
+  --fondo: #FAF6F0;
+  --texto: #2E2420;
+  --principal: #7A4F31;
+  --texto-boton: #FFFFFF;
+  --acento: #C8A24A;          /* solo decorativo, nunca para texto */
+
+  --fuente-titulos: "Playfair Display", Georgia, serif;
+  --fuente-texto: "Source Sans 3", system-ui, sans-serif;
+
+  --radio: 12px;              /* tarjetas y fotos: 0 = rectas, 12px = suaves */
+  --radio-boton: 999px;       /* botones: 0 = rectos, 8px = suaves, 999px = píldora */
+
+  /* Derivados: no hace falta tocarlos */
+  --texto-suave: color-mix(in srgb, var(--texto) 80%, var(--fondo));
+  --superficie: color-mix(in srgb, var(--fondo) 94%, var(--texto));
+  --linea: color-mix(in srgb, var(--fondo) 82%, var(--texto));
+  --ancho: 1120px;
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3 { font-family: var(--fuente-titulos); line-height: 1.15; margin: 0 0 0.5em; text-wrap: balance; }
+h1 { font-size: clamp(2.25rem, 6vw, 3.75rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: 1.25rem; }
+p { margin: 0 0 1em; text-wrap: pretty; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+ul { padding: 0; margin: 0; list-style: none; }
+
+:focus-visible { outline: 3px solid var(--principal); outline-offset: 3px; }
+
+.contenedor { width: min(100% - 2.5rem, var(--ancho)); margin-inline: auto; }
+
+.saltar {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  padding: 0.75rem 1rem; background: var(--texto); color: var(--fondo);
+  border-radius: 8px;
+}
+.saltar:focus { top: 1rem; }
+
+/* ---------- Botones ---------- */
+.botones { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.boton {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0.75rem 1.5rem;
+  background: var(--principal); color: var(--texto-boton);
+  border: 2px solid var(--principal); border-radius: var(--radio-boton);
+  font-weight: 600; text-decoration: none;
+  transition: transform 160ms var(--ease), filter 160ms var(--ease);
+}
+.boton:hover { filter: brightness(1.08); }
+.boton:active { transform: scale(0.97); }
+.boton--borde { background: transparent; color: var(--texto); border-color: var(--linea); }
+.boton--borde:hover { border-color: var(--texto); filter: none; }
+.boton--chico { min-height: 44px; padding: 0.5rem 1.1rem; }
+
+/* ---------- Cabecera y menú ---------- */
+.cabecera {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--fondo);               /* opaca: siempre legible sobre el contenido */
+  border-bottom: 1px solid var(--linea);
+}
+.cabecera__fila { display: flex; align-items: center; justify-content: space-between; min-height: 4.5rem; gap: 1rem; }
+.marca { font-family: var(--fuente-titulos); font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+
+.menu-boton {
+  display: none;
+  width: 48px; height: 48px; padding: 0; border: 0;
+  background: transparent; color: var(--texto); border-radius: 8px; cursor: pointer;
+}
+.menu__lista { display: flex; align-items: center; gap: 1.75rem; }
+.menu__lista a:not(.boton) { text-decoration: none; font-weight: 600; padding: 0.5rem 0; }
+.menu__lista a:not(.boton):hover { color: var(--principal); }
+
+@media (max-width: 860px) {
+  .menu-boton { display: inline-flex; align-items: center; justify-content: center; }
+  .menu {
+    position: fixed; inset: 4.5rem 0 0 0;
+    background: var(--fondo);             /* opaca, sin transparencias */
+    padding: 1.5rem 1.25rem;
+    visibility: hidden; opacity: 0; transform: translateY(-8px);
+    transition: opacity 200ms var(--ease), transform 200ms var(--ease), visibility 200ms;
+  }
+  .menu--abierto { visibility: visible; opacity: 1; transform: none; }
+  .menu__lista { flex-direction: column; align-items: stretch; gap: 0.25rem; }
+  .menu__lista a:not(.boton) { display: block; padding: 0.9rem 0; font-size: 1.25rem; border-bottom: 1px solid var(--linea); }
+  .menu__lista .boton { margin-top: 1rem; }
+}
+
+/* ---------- Portada ---------- */
+.portada { padding: clamp(3rem, 9vw, 7rem) 0; }
+.portada__grilla { display: grid; gap: 2.5rem; align-items: center; }
+.portada__bajada { font-size: 1.2rem; color: var(--texto-suave); max-width: 38rem; margin-bottom: 2rem; }
+.portada__foto { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radio); }
+.etiqueta {
+  display: inline-block; margin-bottom: 1rem;
+  font-size: 0.9rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+  color: var(--texto-suave);
+}
+.etiqueta::before { content: ""; display: inline-block; width: 1.5rem; height: 2px; margin-right: 0.6rem; vertical-align: middle; background: var(--acento); }
+@media (min-width: 900px) {
+  .portada__grilla:has(.portada__foto) { grid-template-columns: 1.1fr 1fr; }
+}
+
+/* ---------- Secciones ---------- */
+.seccion { padding: clamp(4rem, 10vw, 7rem) 0; }
+.seccion--superficie { background: var(--superficie); }
+.seccion__cabeza { max-width: 40rem; margin-bottom: 2.5rem; }
+.seccion__cabeza p { color: var(--texto-suave); }
+
+.dos-columnas { display: grid; gap: 2rem; }
+@media (min-width: 900px) { .dos-columnas { grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; } }
+
+.tarjetas { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+.tarjeta {
+  padding: 1.75rem; background: var(--fondo);
+  border: 1px solid var(--linea); border-radius: var(--radio);
+}
+.seccion--superficie .tarjeta { background: var(--fondo); }
+.tarjeta p { color: var(--texto-suave); }
+.tarjeta p:last-child { margin-bottom: 0; }
+.tarjeta .tarjeta__precio { font-weight: 600; color: var(--texto); }
+.tarjeta__autor { font-weight: 600; }
+.tarjeta blockquote { margin: 0 0 1rem; }
+
+.lista-razones li { position: relative; padding-left: 1.75rem; margin-bottom: 0.75rem; }
+.lista-razones li::before {
+  content: ""; position: absolute; left: 0; top: 0.65em;
+  width: 0.75rem; height: 2px; background: var(--acento);
+}
+
+.galeria { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+.galeria img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radio); }
+
+.direccion { font-size: 1.2rem; }
+.horario { margin: 0; }
+.horario div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--linea); }
+.horario dt { font-weight: 600; }
+.horario dd { margin: 0; color: var(--texto-suave); }
+.mapa { width: 100%; min-height: 320px; border: 0; border-radius: var(--radio); }
+
+.cierre__caja { text-align: center; max-width: 40rem; }
+.cierre__caja .botones { justify-content: center; }
+.cierre__caja p { color: var(--texto-suave); margin-bottom: 2rem; }
+
+/* ---------- Pie ---------- */
+.pie { padding: 3rem 0 6rem; border-top: 1px solid var(--linea); font-size: 0.95rem; }
+.pie p { margin-bottom: 0.4em; color: var(--texto-suave); }
+.pie__fila { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; }
+.pie .pie__nombre { font-family: var(--fuente-titulos); font-size: 1.15rem; font-weight: 700; color: var(--texto); }
+.pie__redes { display: flex; gap: 1.25rem; }
+.pie__redes a { display: inline-block; padding: 0.6rem 0; font-weight: 600; text-decoration: none; }
+.pie__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--linea); }
+.credito a { text-decoration: none; font-weight: 600; }
+.credito a:hover { text-decoration: underline; }
+
+/* ---------- WhatsApp flotante ---------- */
+.whatsapp {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 40;
+  display: grid; place-items: center;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #1A9E4F; color: #FFFFFF;    /* verde WhatsApp con contraste suficiente para el ícono */
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.2);
+  transition: transform 160ms var(--ease);
+}
+.whatsapp:hover { transform: scale(1.06); }
+.whatsapp:active { transform: scale(0.97); }
+
+/* ---------- Aparición suave al bajar (la activa app.js) ---------- */
+.aparece { transition: opacity 600ms var(--ease), transform 600ms var(--ease); }
+.aparece.oculto { opacity: 0; transform: translateY(16px); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}

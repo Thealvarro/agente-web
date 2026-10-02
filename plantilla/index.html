@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- CAMBIAR: nombre y qué hace, máximo 60 caracteres -->
+  <title>Nombre del Negocio · Qué hacemos en Tu Comuna</title>
+  <!-- CAMBIAR: lo que se lee en Google, máximo 155 caracteres -->
+  <meta name="description" content="Una frase clara sobre qué hace el negocio, dónde está y cómo contactarlo.">
+  <!-- CAMBIAR: el color de fondo de diseno.md -->
+  <meta name="theme-color" content="#FAF6F0">
+
+  <!-- Vista previa al compartir por WhatsApp o redes.
+       CAMBIAR al publicar: og:url y og:image necesitan la dirección completa (https://...). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nombre del Negocio">
+  <meta property="og:description" content="Una frase clara sobre qué hace el negocio.">
+  <meta property="og:url" content="https://TU-DIRECCION/">
+  <meta property="og:image" content="https://TU-DIRECCION/imagenes/compartir.jpg">
+  <meta property="og:locale" content="es_CL">
+
+  <link rel="icon" href="imagenes/favicon.svg" type="image/svg+xml">
+
+  <!-- CAMBIAR: las dos tipografías de diseno.md, solo con los pesos que se usan -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=swap">
+
+  <link rel="stylesheet" href="estilos.css">
+  <script src="app.js" defer></script>
+
+  <!-- Ficha del negocio para Google. CAMBIAR todos los datos; borra los que no existan.
+       "@type": usa el más específico (HairSalon, BeautySalon, Dentist, Restaurant, CafeOrCoffeeShop,
+       AutoRepair, VeterinaryCare, Store, LegalService, AccountingService) o deja LocalBusiness. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nombre del Negocio",
+    "description": "Una frase clara sobre qué hace el negocio.",
+    "telephone": "+56900000000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle 123",
+      "addressLocality": "Tu Comuna",
+      "addressRegion": "Tu Región",
+      "addressCountry": "CL"
+    },
+    "openingHours": ["Mo-Fr 09:00-19:00", "Sa 10:00-14:00"],
+    "sameAs": ["https://www.instagram.com/tu_negocio"]
+  }
+  </script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__fila">
+      <!-- CAMBIAR: nombre del negocio, o su logo: <img src="imagenes/logo.svg" alt="Nombre del Negocio" width="140" height="40"> -->
+      <a class="marca" href="#inicio">Nombre del Negocio</a>
+
+      <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+
+      <!-- CAMBIAR: un link por cada sección que quede en la página -->
+      <nav class="menu" id="menu" aria-label="Principal">
+        <ul class="menu__lista">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+          <li><a class="boton boton--chico" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- PORTADA: siempre va -->
+    <section class="portada" id="inicio">
+      <div class="contenedor portada__grilla">
+        <div class="portada__texto">
+          <p class="etiqueta">Rubro · Tu Comuna</p>
+          <h1>Una frase que diga qué haces y por qué elegirte</h1>
+          <p class="portada__bajada">Una o dos líneas más con lo que el cliente gana. Concreto, con las palabras del negocio.</p>
+          <div class="botones">
+            <!-- CAMBIAR: número con código de país, sin + ni espacios, y el mensaje inicial -->
+            <a class="boton" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+            <a class="boton boton--borde" href="#servicios">Ver servicios</a>
+          </div>
+        </div>
+        <!-- OPCIONAL: foto de portada (menos de 300 KB). Si no hay foto, borra este bloque.
+        <img class="portada__foto" src="imagenes/portada.webp" alt="DESCRIBE LA FOTO" width="1200" height="900" fetchpriority="high">
+        -->
+      </div>
+    </section>
+
+    <!-- SERVICIOS: entre 3 y 6 -->
+    <section class="seccion" id="servicios">
+      <div class="contenedor">
+        <div class="seccion__cabeza aparece">
+          <h2>Servicios</h2>
+          <p>Una línea que presente los servicios.</p>
+        </div>
+        <ul class="tarjetas">
+          <li class="tarjeta aparece">
+            <h3>Servicio uno</h3>
+            <p>Qué incluye, en una o dos líneas.</p>
+            <p class="tarjeta__precio">$00.000</p> <!-- OPCIONAL: borra si no muestra precios -->
+          </li>
+          <li class="tarjeta aparece">
+            <h3>Servicio dos</h3>
+            <p>Qué incluye, en una o dos líneas.</p>
+            <p class="tarjeta__precio">$00.000</p>
+          </li>
+          <li class="tarjeta aparece">
+            <h3>Servicio tres</h3>
+            <p>Qué incluye, en una o dos líneas.</p>
+            <p class="tarjeta__precio">$00.000</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- NOSOTROS: quién atiende y por qué elegirlo. Sin años ni cifras inventadas -->
+    <section class="seccion seccion--superficie" id="nosotros">
+      <div class="contenedor dos-columnas aparece">
+        <h2>Quiénes somos</h2>
+        <div>
+          <p>Dos o tres frases sobre el negocio y quién atiende, con las palabras del dueño.</p>
+          <ul class="lista-razones">
+            <li>Una razón real para elegirlo.</li>
+            <li>Otra razón real.</li>
+            <li>Una tercera, si existe.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPCIONAL: GALERÍA. Solo con fotos reales del negocio (menos de 200 KB cada una). Si no hay, borra la sección.
+    <section class="seccion" id="galeria">
+      <div class="contenedor">
+        <h2 class="aparece">Nuestro trabajo</h2>
+        <div class="galeria">
+          <img class="aparece" src="imagenes/trabajo-1.webp" alt="DESCRIBE LA FOTO" width="800" height="800" loading="lazy">
+          <img class="aparece" src="imagenes/trabajo-2.webp" alt="DESCRIBE LA FOTO" width="800" height="800" loading="lazy">
+          <img class="aparece" src="imagenes/trabajo-3.webp" alt="DESCRIBE LA FOTO" width="800" height="800" loading="lazy">
+        </div>
+      </div>
+    </section>
+    -->
+
+    <!-- OPCIONAL: RESEÑAS. Solo reales, con nombre y fuente. Nunca inventadas. Si no hay, borra la sección.
+    <section class="seccion seccion--superficie" id="resenas">
+      <div class="contenedor">
+        <h2 class="aparece">Lo que dicen nuestros clientes</h2>
+        <ul class="tarjetas">
+          <li class="tarjeta aparece">
+            <blockquote><p>"Texto real de la reseña."</p></blockquote>
+            <p class="tarjeta__autor">Nombre · Reseña en Google</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    -->
+
+    <!-- UBICACIÓN Y HORARIO. El mapa solo si hay dirección pública -->
+    <section class="seccion" id="ubicacion">
+      <div class="contenedor dos-columnas aparece">
+        <div>
+          <h2>Dónde estamos</h2>
+          <p class="direccion">Calle 123, Tu Comuna</p>
+          <h3>Horario</h3>
+          <dl class="horario">
+            <div><dt>Lunes a viernes</dt><dd>9:00 a 19:00</dd></div>
+            <div><dt>Sábado</dt><dd>10:00 a 14:00</dd></div>
+            <div><dt>Domingo</dt><dd>Cerrado</dd></div>
+          </dl>
+        </div>
+        <!-- OPCIONAL: mapa. CAMBIAR la dirección en "q=" (con + en vez de espacios).
+        <iframe class="mapa" title="Mapa de ubicación de Nombre del Negocio" src="https://maps.google.com/maps?q=Calle+123,+Tu+Comuna&output=embed" width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        -->
+      </div>
+    </section>
+
+    <!-- CIERRE: el botón principal por última vez -->
+    <section class="seccion cierre" id="contacto">
+      <div class="contenedor cierre__caja aparece">
+        <h2>¿Conversamos?</h2>
+        <p>Una línea que invite a dar el paso.</p>
+        <div class="botones">
+          <a class="boton" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
+          <a class="boton boton--borde" href="tel:+56900000000">Llamar</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__fila">
+      <div>
+        <p class="pie__nombre">Nombre del Negocio</p>
+        <p>Calle 123, Tu Comuna · <a href="tel:+56900000000">+56 9 0000 0000</a></p>
+      </div>
+      <!-- CAMBIAR: solo las redes que existan -->
+      <ul class="pie__redes">
+        <li><a href="https://www.instagram.com/tu_negocio" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      </ul>
+    </div>
+    <div class="contenedor pie__legal">
+      <p>© 2026 Nombre del Negocio</p>
+      <p class="credito">Hecho con <a href="https://alvarocofre.dev" target="_blank" rel="noopener noreferrer">armatuweb</a></p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp: solo si el contacto principal es WhatsApp -->
+  <a class="whatsapp" href="https://wa.me/56900000000?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.19 4.23-9.42 9.43-9.42 2.52 0 4.88.98 6.66 2.76a9.36 9.36 0 0 1 2.76 6.67c0 5.2-4.23 9.42-9.43 9.42zm8.02-17.45A11.27 11.27 0 0 0 12.04.72C5.79.72.7 5.8.7 12.06c0 2 .52 3.95 1.52 5.67L.6 23.28l5.68-1.49a11.3 11.3 0 0 0 5.76 1.47h.01c6.25 0 11.34-5.09 11.34-11.34 0-3.03-1.18-5.88-3.33-8.02z"/></svg>
+  </a>
+</body>
+</html>
