@@ -14,7 +14,7 @@ La mayoría de la gente va a abrir esta página desde el celular, muchas veces c
 ## Tipografías
 
 - [ ] Máximo dos familias, y solo los pesos que se usan (por ejemplo 400 y 700).
-- [ ] El link de Google Fonts termina en `&display=swap`.
+- [ ] El link de Google Fonts termina en `&display=optional`. Con `swap` la letra cambia a mitad de la carga y la página "salta" (sobre todo con letras angostas como Oswald o Bebas Neue).
 - [ ] Hay `<link rel="preconnect">` a `fonts.googleapis.com` y a `fonts.gstatic.com` (este último con `crossorigin`).
 
 ## Código

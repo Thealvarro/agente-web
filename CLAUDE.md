@@ -59,7 +59,7 @@ Haz las rondas 3 y 4 del cuestionario. Después, guarda en `sitio/resumen.md` to
 
 Construye la página en `sitio/` partiendo de `plantilla/`, siguiendo `plantilla/LEEME.md` al pie de la letra:
 
-- Una sola página: `index.html`, `estilos.css`, `app.js` y `vercel.json`. Sin frameworks, sin librerías, sin recursos externos salvo Google Fonts y el mapa de Google.
+- Una sola página: `index.html`, `estilos.css`, `app.js`, `vercel.json` y `.vercelignore`. Sin frameworks, sin librerías, sin recursos externos salvo Google Fonts y el mapa de Google.
 - `sitio/imagenes/`: las fotos del usuario, livianas (ver `docs/checklists/rendimiento.md`).
 - Primero celular, después computador.
 - Textos cortos y concretos, con las palabras del usuario. Nada de relleno tipo "soluciones innovadoras" o "pasión por la excelencia".

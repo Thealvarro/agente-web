@@ -34,5 +34,6 @@ Si no se puede cumplir todo, vuelve a los botones directos (WhatsApp, llamar, co
 ## Publicación
 
 - [ ] `sitio/vercel.json` existe y es igual al de `plantilla/` (salvo un cambio justificado).
+- [ ] `sitio/.vercelignore` existe, así las muestras, `diseno.md`, `resumen.md` y las referencias no quedan publicadas.
 - [ ] En `index.html` no hay `style="..."`, ni `on...="..."`, ni `<script>` con código (solo el de `application/ld+json`). Si los hay, al publicar la página se rompe.
 - [ ] `sitio/` no contiene archivos `.env` ni carpetas que no son parte de la página.
