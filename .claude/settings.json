@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(./sitio/**)",
+      "Bash(node --version)",
+      "PowerShell(node --version)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(rm -rf *)",
+      "Bash(git push *)",
+      "PowerShell(Invoke-WebRequest *)",
+      "PowerShell(Invoke-RestMethod *)",
+      "PowerShell(iwr *)",
+      "PowerShell(irm *)",
+      "PowerShell(curl *)",
+      "PowerShell(wget *)"
+    ]
+  }
+}

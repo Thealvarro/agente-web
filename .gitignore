@@ -1,0 +1,16 @@
+# La página de cada usuario vive aquí y no es parte del kit
+sitio/
+
+# Secretos y configuración local
+.env
+.env.*
+.vercel/
+.claude/settings.local.json
+
+# Dependencias
+node_modules/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
