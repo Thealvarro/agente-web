@@ -3,7 +3,19 @@
     "allow": [
       "Edit(./sitio/**)",
       "Bash(node --version)",
-      "PowerShell(node --version)"
+      "PowerShell(node --version)",
+      "Bash(node herramientas/servir.mjs)",
+      "Bash(node herramientas/servir.mjs *)",
+      "PowerShell(node herramientas/servir.mjs)",
+      "PowerShell(node herramientas/servir.mjs *)",
+      "Bash(node herramientas/capturas.mjs)",
+      "Bash(node herramientas/capturas.mjs *)",
+      "PowerShell(node herramientas/capturas.mjs)",
+      "PowerShell(node herramientas/capturas.mjs *)",
+      "Bash(node herramientas/fuentes.mjs)",
+      "Bash(node herramientas/fuentes.mjs *)",
+      "PowerShell(node herramientas/fuentes.mjs)",
+      "PowerShell(node herramientas/fuentes.mjs *)"
     ],
     "deny": [
       "Read(./.env)",

@@ -22,10 +22,11 @@
 
   <link rel="icon" href="imagenes/favicon.svg" type="image/svg+xml">
 
-  <!-- CAMBIAR: las dos tipografías de diseno.md, solo con los pesos que se usan -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600&display=optional">
+  <!-- Tipografías guardadas dentro de la página (sitio/fuentes/), sin depender de Google.
+       CAMBIAR: se generan con  node herramientas/fuentes.mjs "Títulos:pesos" "Texto:pesos"
+       y el preload apunta al archivo -latin.woff2 de la tipografía de títulos. -->
+  <link rel="preload" href="fuentes/playfair-display-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fuentes/fuentes.css">
 
   <link rel="stylesheet" href="estilos.css">
   <script src="app.js" defer></script>

@@ -11,7 +11,7 @@ Pásalo completo antes de publicar (fase 6). Si algo falla, corrígelo y cuénta
 ## Links y recursos externos
 
 - [ ] Todo link que abre pestaña nueva lleva `rel="noopener noreferrer"`.
-- [ ] Los únicos recursos externos son Google Fonts y el mapa de Google. Sin scripts de terceros, sin widgets, sin píxeles de seguimiento.
+- [ ] El único recurso externo es el mapa de Google (y fotos de Unsplash o Pexels, si no se descargaron). Las tipografías van dentro de la página. Sin scripts de terceros, sin widgets, sin píxeles de seguimiento.
 - [ ] Los links de WhatsApp usan `https://wa.me/` con el número completo, código de país incluido.
 
 ## Formularios (solo si el usuario insistió en tener uno)
