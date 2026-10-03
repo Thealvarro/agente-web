@@ -25,11 +25,12 @@ npx vercel deploy --prod --yes --cwd sitio
 
 - Si `project create` dice que el nombre ya existe, propón otro (con la comuna, por ejemplo) y repite.
 - **Siempre con `--cwd sitio`:** se publica solo la carpeta de la página. Sin crear y enlazar el proyecto primero, quedaría con el nombre "sitio" y otra página podría pisarla.
+- Al enlazar, Vercel deja en `sitio/` una carpeta `.vercel/` y un archivo `.env.local` con una clave temporal. **Nunca los abras, copies ni publiques:** `.vercelignore` ya los excluye. Confírmalo antes de publicar.
 
 ## Justo después de publicar
 
 1. **Completa lo que necesita la dirección final** (skill `seo-local`): `og:url`, `og:image` si hay `compartir.jpg`, `<link rel="canonical">`, la `url` de la ficha `ld+json`, `robots.txt` y `sitemap.xml`. Vuelve a publicar con `npx vercel deploy --prod --yes --cwd sitio`.
-2. **Revisa la página publicada** con Lighthouse sobre la dirección real (pasos de la skill `rendimiento`, cambiando `http://127.0.0.1:4321` por `https://NOMBRE.vercel.app`). Debe dar 90 o más y **cero errores en la consola**: un error ahí casi siempre es la seguridad bloqueando algo.
+2. **Revisa la página publicada**, solo en su dirección principal (`https://NOMBRE.vercel.app`). Las direcciones de cada versión antigua están protegidas, y revisarlas crea un permiso de acceso extra en el proyecto que no hace falta. Usa Lighthouse sobre la dirección real (pasos de la skill `rendimiento`, cambiando `http://127.0.0.1:4321` por `https://NOMBRE.vercel.app`). Debe dar 90 o más y **cero errores en la consola**: un error ahí casi siempre es la seguridad bloqueando algo.
 3. **Confirma que los archivos de trabajo no quedaron públicos:** abre (con permiso) `https://NOMBRE.vercel.app/muestras.html`. Debe dar "no encontrado".
 4. Entrégale el link y cuéntale cómo compartirlo.
 

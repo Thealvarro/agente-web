@@ -6,3 +6,7 @@ referencias/
 originales/
 variantes.html
 investigacion.md
+# Archivos que crea Vercel en esta carpeta: nunca se publican
+.env*
+.vercel/
+.gitignore
