@@ -53,6 +53,58 @@ Tú conversas. Él pregunta, diseña, construye y revisa. Tú eliges y apruebas.
 | 5. Revisión | La revisa con listas de accesibilidad y rendimiento, y la ajusta según lo que le pidas |
 | 6. Publicar | Si quieres, la sube a internet y te entrega el link |
 
+### El flujo completo
+
+Los rombos naranjos son los únicos momentos en que Claude espera tu decisión. Todo lo demás lo hace solo.
+
+```mermaid
+flowchart TD
+    A([Escribes claude en la carpeta]) --> B[Claude lee CLAUDE.md y te saluda]
+    B --> R1
+
+    subgraph F1["1 · Conocerte"]
+        R1[Ronda 1: tu negocio] --> R2[Ronda 2: el estilo<br/>logo, Instagram o una imagen que te guste]
+    end
+
+    subgraph F2["2 · Diseño"]
+        M[Arma 3 propuestas<br/>en muestras.html] --> E{¿Cuál eliges?}
+        E -- Ninguna o una mezcla --> M
+    end
+
+    subgraph F3["3 · Contenido"]
+        R3[Ronda 3: servicios,<br/>reseñas reales y horario] --> R4[Ronda 4: contacto,<br/>fotos y redes]
+        R4 --> RES{¿El resumen<br/>tiene todo?}
+        RES -- Falta algo --> R3
+    end
+
+    subgraph F4["4 · Armado"]
+        P[Copia la plantilla a sitio/] --> C[Construye tu página<br/>con tu diseño y tus textos]
+    end
+
+    subgraph F5["5 · Revisión"]
+        K[Revisa accesibilidad<br/>y rendimiento] --> V{¿Qué cambiarías?}
+        V -- Cambios --> AJ[Ajusta la página] --> V
+    end
+
+    subgraph F6["6 · Publicar"]
+        S[Revisa la seguridad] --> L[Inicias sesión en Vercel] --> D[Publica con el<br/>nombre de tu negocio]
+    end
+
+    R2 --> M
+    E -- La elegí --> R3
+    RES -- Sí --> P
+    C --> K
+    V -- Está lista --> Q{¿La publicamos?}
+    Q -- Sí --> S
+    Q -- Todavía no --> Z([Queda lista en tu PC, en sitio/])
+    D --> U([Tu página en internet])
+
+    classDef decision fill:#ee6c4d,stroke:#d95b3e,color:#ffffff
+    classDef extremo fill:#2e4460,stroke:#2e4460,color:#ffffff
+    class E,RES,V,Q decision
+    class A,U,Z extremo
+```
+
 ## Seguro por defecto
 
 - **Permisos mínimos:** solo puede crear archivos dentro de la carpeta `sitio/`. Para todo lo demás te pide permiso, y descargar cosas de internet está bloqueado.
