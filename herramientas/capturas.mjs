@@ -2,7 +2,8 @@
 // guarda como imagen, para revisar cómo se ve. Sin dependencias.
 //
 // Uso: node herramientas/capturas.mjs <informe.json> <salida.jpg>
-import { readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { dirname } from 'node:path';
 
 const [informe, salida] = process.argv.slice(2);
 if (!informe || !salida) {
@@ -21,9 +22,19 @@ if (!captura) {
 }
 
 const [, base64] = captura.split(',');
+await mkdir(dirname(salida), { recursive: true });
 await writeFile(salida, Buffer.from(base64, 'base64'));
 
 const puntajes = Object.entries(datos.categories ?? {})
   .map(([nombre, c]) => `${nombre} ${Math.round(c.score * 100)}`)
   .join(' · ');
 console.log(`Captura guardada en ${salida}. Puntajes: ${puntajes}`);
+
+// Lo que conviene mejorar, para no tener que leer el informe completo.
+// Caché y compresión se ignoran: el servidor local no las hace y Vercel sí.
+const ignorar = new Set(['uses-long-cache-ttl', 'cache-insight', 'uses-text-compression', 'document-latency-insight']);
+const pendientes = Object.entries(datos.audits ?? {})
+  .filter(([id, a]) => !ignorar.has(id) && a.score !== null && a.score < 0.9
+    && ['binary', 'numeric', 'metricSavings'].includes(a.scoreDisplayMode))
+  .map(([id, a]) => `- ${a.title}${a.displayValue ? ` (${a.displayValue})` : ''} [${id}]`);
+console.log(pendientes.length ? `A mejorar:\n${pendientes.join('\n')}` : 'Nada importante que mejorar.');

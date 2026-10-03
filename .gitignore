@@ -1,6 +1,9 @@
 # La página de cada usuario vive aquí y no es parte del kit
 sitio/
 
+# Informes de revisión (Lighthouse, capturas)
+revision/
+
 # Secretos y configuración local
 .env
 .env.*

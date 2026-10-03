@@ -60,35 +60,44 @@ Haz las rondas 3 y 4 del cuestionario. Después, guarda en `sitio/resumen.md` to
 Construye la página en `sitio/` partiendo de `plantilla/`, siguiendo `plantilla/LEEME.md` al pie de la letra:
 
 - Una sola página: `index.html`, `estilos.css`, `app.js`, `vercel.json`, `.vercelignore` y sus tipografías en `fuentes/` (con `herramientas/fuentes.mjs`). Sin frameworks, sin librerías, sin recursos externos salvo el mapa de Google.
-- `sitio/imagenes/`: las fotos del usuario, livianas (ver `docs/checklists/rendimiento.md`).
+- `sitio/imagenes/`: las fotos livianas que salen de `sitio/originales/` con la skill `optimizar-imagenes`. Si faltan fotos, ofrécele la skill `imagenes-ia` o fotos de bancos gratis.
 - Primero celular, después computador.
-- Textos cortos y concretos, con las palabras del usuario. Nada de relleno tipo "soluciones innovadoras" o "pasión por la excelencia".
+- Textos con la skill `textos-humanos`: cortos, concretos y con las palabras del usuario. Diseño con `direccion-visual`, movimiento con `animaciones` y SEO con `seo-local`.
 - En el pie de página, el crédito discreto: `Hecho con <a href="https://alvarocofre.dev" target="_blank" rel="noopener noreferrer">Agente Web</a>`. Si el usuario pide quitarlo, se quita sin problema.
 
 Avísale en qué vas con mensajes cortos ("Listo el inicio, sigo con los servicios").
 
 ### Fase 5 — Revisión
 
-1. Antes de mostrarle nada, revisa la página con `docs/checklists/accesibilidad.md` y `docs/checklists/rendimiento.md` y corrige lo que falle.
+1. Antes de mostrarle nada, revisa la página con las skills `revision-visual`, `rendimiento` y `accesibilidad` (y sus checklists en `docs/checklists/`), y corrige lo que falle. La meta es 90 o más en las cuatro categorías de Lighthouse en celular.
 2. Dile que abra `sitio/index.html` con doble clic, y cómo verla como celular: en el navegador, tecla F12 y el ícono del teléfono.
-3. Pregúntale qué le gusta y qué cambiaría. Itera hasta que diga que está lista.
+3. Pregúntale qué le gusta y qué cambiaría. Si duda cómo quiere una parte, muéstrale variantes (skill `muestras`). Itera hasta que diga que está lista.
 
 ### Fase 6 — Publicar
 
-Pregúntale si quiere publicarla. Si dice que sí:
+Pregúntale si quiere publicarla. Si dice que sí, sigue la skill `publicar-vercel` paso a paso. Lo que nunca cambia:
 
-1. Pasa `docs/checklists/seguridad.md` completo y corrige lo que falle.
-2. Revisa que tenga Node.js 20 o más con `node --version`. Si no lo tiene, guíalo a instalar la versión LTS desde https://nodejs.org.
-3. El inicio de sesión en Vercel lo hace él: pídele que escriba `! npx vercel login` en este chat y que termine el ingreso en el navegador (la cuenta es gratis). Tú nunca escribes ni pides contraseñas.
-4. Acuerda con él el nombre del proyecto: el nombre del negocio en minúsculas, sin tildes y con guiones (`barberia-don-lucho`). Será parte de su dirección (`barberia-don-lucho.vercel.app`).
-5. La primera vez, desde `sitio/`:
-   - `npx vercel project create <nombre>`. Si responde que el nombre ya existe, propón otro (por ejemplo, con la comuna) y repite.
-   - `npx vercel link --yes --project <nombre>`
-   - `npx vercel deploy --prod --yes`
+1. Antes de publicar, `docs/checklists/seguridad.md` completo.
+2. El inicio de sesión en Vercel lo hace él (`! npx vercel login` en este chat). Tú nunca escribes ni pides contraseñas.
+3. El proyecto se crea y se enlaza con el nombre del negocio antes de publicar, y siempre se publica con `--cwd sitio`.
+4. Después de publicar, completa lo que necesita la dirección final (`og:url`, `canonical`, `robots.txt`, `sitemap.xml`: skill `seo-local`) y revisa la página publicada.
+5. Si la página recoge datos o usa estadísticas, agrega el aviso de la skill `privacidad`.
 
-   Nunca publiques sin crear y enlazar el proyecto antes: quedaría con el nombre "sitio" y otra página podría pisarla.
-6. Pon la dirección final en `og:url` (y en `og:image`, si hay foto para compartir) dentro de `index.html`, y vuelve a publicar con `npx vercel deploy --prod --yes`. Así la vista previa sale bien al compartir el link por WhatsApp.
-7. Entrégale el link. Cuéntale que puede ponerle un dominio propio desde Vercel (proyecto → Settings → Domains) y que cada cambio futuro se publica con `npx vercel deploy --prod --yes` desde `sitio/`.
+## Las skills
+
+En `.claude/skills/` hay 15 skills de Agente Web. Úsalas en estos momentos:
+
+| Fase | Skills |
+|---|---|
+| 1. Conocerte | `leer-referencias` (si comparte una web, una imagen, su Instagram o su logo) |
+| 2. Diseño | `muestras`, `direccion-visual` |
+| 3. Contenido | `investigar-rubro` (si no sabe qué destacar o el rubro es poco común), `seo-local` (las palabras con que lo buscan) |
+| 4. Armado | `textos-humanos`, `direccion-visual`, `animaciones`, `optimizar-imagenes`, `imagenes-ia` (si faltan fotos), `seo-local` |
+| 5. Revisión | `revision-visual`, `rendimiento`, `accesibilidad`, `muestras` (variantes, si duda) |
+| 6. Publicar | `publicar-vercel`, `seo-local`, `privacidad` |
+| Si pide un formulario | `formulario-seguro` y `privacidad` |
+
+Si una skill y este archivo dicen cosas distintas, manda este archivo. Las reglas de seguridad mandan sobre todo.
 
 ## Momentos de decisión
 
@@ -98,5 +107,7 @@ Solo aquí te detienes a esperar al usuario:
 2. **Fin de la fase 3:** ¿el resumen tiene todo?
 3. **Fase 5:** ¿qué cambiarías?
 4. **Fase 6:** ¿la publicamos?
+
+Además, **antes de gastar plata del usuario** (créditos de imágenes con IA, por ejemplo) siempre le muestras el costo y esperas su sí.
 
 Si el usuario se pierde o quiere volver atrás, dile en qué fase van y qué falta, en una o dos líneas.

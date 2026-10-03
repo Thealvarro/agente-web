@@ -1,6 +1,6 @@
 # Agente Web
 
-<img src="docs/assets/armatuweb.webp" width="880" alt="armatuweb: tu página web, paso a paso, con Claude Code. Un proyecto que descargas, abres con Claude Code y, conversando, te guía en 6 fases (conocerte, diseño, contenido, armado, revisión y publicar) hasta tener la página de tu negocio lista.">
+<img src="docs/assets/agente-web.webp" width="880" alt="Agente Web: tu página web, paso a paso, con Claude Code. Un proyecto que descargas, abres con Claude Code y, conversando, te guía en 6 fases (conocerte, diseño, contenido, armado, revisión y publicar) hasta tener la página de tu negocio lista.">
 
 [![Licencia MIT](https://img.shields.io/badge/licencia-MIT-ee6c4d?style=flat-square&labelColor=2e4460)](LICENSE)
 [![Hecho para Claude Code](https://img.shields.io/badge/hecho_para-Claude_Code-ee6c4d?style=flat-square&labelColor=2e4460)](https://claude.com/product/claude-code)
@@ -105,13 +105,40 @@ flowchart TD
     class A,U,Z extremo
 ```
 
+## Las 15 skills
+
+Las skills son el conocimiento experto que Claude usa en cada fase. Vienen incluidas en `.claude/skills/` y se cargan solas.
+
+| Skill | Qué hace |
+|---|---|
+| `leer-referencias` | Analiza la web, la imagen, el Instagram o el logo que le muestres y saca colores, letras y estilo, sin copiar |
+| `muestras` | Te arma las 3 propuestas de diseño y, si dudas, variantes de una sección para comparar |
+| `direccion-visual` | Criterio de diseño para que la página se vea hecha a la medida, incluso sin fotos |
+| `investigar-rubro` | Investiga qué valoran los clientes de tu rubro en tu zona, para destacar lo que importa |
+| `textos-humanos` | Escribe con tu voz, concreto y sin frases de relleno que delatan a una IA |
+| `animaciones` | Movimiento con criterio: suave, rápido y que respeta a quien lo desactiva |
+| `imagenes-ia` | Genera imágenes con IA (Higgsfield u otra herramienta conectada), mostrando el costo antes |
+| `optimizar-imagenes` | Convierte tus fotos en versiones livianas, derechas y con el tamaño justo |
+| `seo-local` | Te prepara para aparecer en Google cuando buscan tu rubro en tu comuna, y te guía con Google Business |
+| `revision-visual` | Mira tu página en celular y computador y encuentra lo que se ve mal |
+| `rendimiento` | Mide la velocidad con Lighthouse y corrige lo que la hace lenta |
+| `accesibilidad` | Revisa que cualquier persona pueda usar tu página |
+| `publicar-vercel` | La sube a internet con el nombre de tu negocio, y te ayuda con tu dominio propio |
+| `privacidad` | Redacta tu aviso de privacidad cuando hace falta (Ley 21.719) |
+| `formulario-seguro` | Si de verdad necesitas un formulario, lo resuelve sin exponer tus datos ni los de tus clientes |
+
+### Imágenes con IA (Higgsfield)
+
+Si no tienes fotos, Claude puede generarlas con [Higgsfield](https://higgsfield.ai) u otra herramienta de imágenes que tengas conectada a Claude. Las usa para ambientes, detalles y fondos, **nunca** para mostrar trabajos, lugares o personas que no son tuyos. Cada imagen cuesta créditos de tu cuenta, así que antes de generar te dice cuánto cuesta y espera tu sí.
+
 ## Seguro por defecto
 
 - **Permisos mínimos:** solo puede crear archivos dentro de la carpeta `sitio/`. Para todo lo demás te pide permiso, y descargar cosas de internet está bloqueado.
 - **Sin formularios:** el contacto va por WhatsApp, teléfono o correo, así no guardas datos de nadie.
 - **Nada inventado:** nunca inventa reseñas, cifras ni años de experiencia. Si no los tienes, esa sección no va.
 - **Reglas de seguridad al publicar:** la página sale con protecciones contra código malicioso (CSP y otros headers).
-- **Todo es propio:** el kit no trae skills ni código de terceros.
+- **Todo es propio:** las skills y las herramientas las escribimos para Agente Web. No trae skills ni código de terceros.
+- **Tu plata, tu decisión:** antes de generar una imagen con IA, Claude te muestra cuánto cuesta y espera tu sí.
 
 ## Preguntas frecuentes
 
@@ -131,7 +158,9 @@ flowchart TD
 agente-web/
 ├── CLAUDE.md          el método: cómo guía Claude cada fase
 ├── .claude/           los permisos del kit
+├── .claude/skills/    las 15 skills
 ├── docs/              cuestionario, guía de diseño, orden por rubro y checklists
+├── herramientas/      herramientas propias y sin dependencias (servir, capturas, letras, imágenes)
 ├── plantilla/         la base técnica de toda página (no es un diseño)
 └── sitio/             aquí queda tu página (se crea al usarlo)
 ```

@@ -31,7 +31,7 @@ Con esto pasas a la fase 2 (diseño).
 14. Tu número de WhatsApp o teléfono, y tu correo si quieres que aparezca.
 15. Tu dirección, si quieres un mapa en la página.
 16. ¿Tus redes sociales? Instagram, Facebook, TikTok.
-17. Tu logo y fotos de tu negocio: que las deje en la carpeta `sitio/imagenes/`. Si no tiene fotos, se usan de bancos gratis.
+17. Tu logo y fotos de tu negocio: que las deje en la carpeta `sitio/originales/` (tal cual, sin achicarlas; Claude prepara versiones livianas). Si no tiene fotos, se usan de bancos gratis o se generan con IA (ver la skill `imagenes-ia`).
 18. ¿Quieres publicarla en internet al terminar?
 
 ## Si dice "no sé" o "elige tú"

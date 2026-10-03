@@ -4,7 +4,7 @@
 //
 // Uso: node herramientas/servir.mjs [puerto]
 import { createServer } from 'node:http';
-import { readFile } from 'node:fs/promises';
+import { mkdir, readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { extname, join, normalize, resolve, sep } from 'node:path';
 
@@ -15,6 +15,9 @@ if (!existsSync(join(raiz, 'index.html'))) {
   console.error('No encuentro sitio/index.html. Corre este comando desde la carpeta del kit.');
   process.exit(1);
 }
+
+// Carpeta para los informes de Lighthouse y las capturas (no se publica).
+await mkdir('revision', { recursive: true });
 
 let headers = [];
 try {

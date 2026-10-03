@@ -9,7 +9,7 @@ La mayoría de la gente va a abrir esta página desde el celular, muchas veces c
 - [ ] Formato WebP o JPG; PNG solo para logos con transparencia, y SVG si el logo existe en ese formato.
 - [ ] Todas las `<img>` tienen `width` y `height` (así la página no "salta" mientras carga).
 - [ ] Todas llevan `loading="lazy"`, **salvo la portada**, que lleva `fetchpriority="high"`.
-- [ ] Si una foto del usuario pesa más de lo indicado, pídele que la achique gratis en https://squoosh.app (calidad 75, ancho 1600) y que la reemplace en `sitio/imagenes/`.
+- [ ] Las fotos publicadas salen de `sitio/originales/` optimizadas con la skill `optimizar-imagenes`; los originales no se publican.
 
 ## Tipografías
 

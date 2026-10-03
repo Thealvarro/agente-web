@@ -15,7 +15,11 @@
       "Bash(node herramientas/fuentes.mjs)",
       "Bash(node herramientas/fuentes.mjs *)",
       "PowerShell(node herramientas/fuentes.mjs)",
-      "PowerShell(node herramientas/fuentes.mjs *)"
+      "PowerShell(node herramientas/fuentes.mjs *)",
+      "Bash(node herramientas/medidas.mjs)",
+      "Bash(node herramientas/medidas.mjs *)",
+      "PowerShell(node herramientas/medidas.mjs)",
+      "PowerShell(node herramientas/medidas.mjs *)"
     ],
     "deny": [
       "Read(./.env)",

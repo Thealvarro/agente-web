@@ -1,5 +1,6 @@
-// Descarga UNA imagen a sitio/imagenes/. Solo acepta https, solo imágenes y
-// como máximo 15 MB. No descarga ni ejecuta nada más. Sin dependencias.
+// Descarga UNA imagen a sitio/originales/ (no se publica; después se optimiza
+// hacia sitio/imagenes/). Solo acepta https, solo imágenes y como máximo
+// 15 MB. No descarga ni ejecuta nada más. Sin dependencias.
 //
 // Uso: node herramientas/descargar.mjs <url-https> <nombre-de-archivo>
 import { writeFile, mkdir } from 'node:fs/promises';
@@ -32,7 +33,7 @@ if (!extension) salir(`Eso no es una imagen permitida (llegó: ${tipo || 'descon
 const contenido = Buffer.from(await respuesta.arrayBuffer());
 if (contenido.length > MAXIMO) salir('La imagen pesa más de 15 MB.');
 
-await mkdir('sitio/imagenes', { recursive: true });
-const destino = join('sitio', 'imagenes', limpio + extension);
+await mkdir('sitio/originales', { recursive: true });
+const destino = join('sitio', 'originales', limpio + extension);
 await writeFile(destino, contenido);
 console.log(`Guardada en ${destino} (${Math.round(contenido.length / 1024)} KB).`);
