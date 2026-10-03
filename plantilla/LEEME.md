@@ -1,6 +1,6 @@
 # La plantilla
 
-Es la base técnica de toda página de armatuweb: estructura, menú del celular, botón de WhatsApp, pie con el crédito y seguridad. **No es un diseño**: el aspecto visual sale de `sitio/diseno.md`.
+Es la base técnica de toda página de Agente Web: estructura, menú del celular, botón de WhatsApp, pie con el crédito y seguridad. **No es un diseño**: el aspecto visual sale de `sitio/diseno.md`.
 
 ## Archivos
 

@@ -7,7 +7,7 @@ Cada rubro tiene un orden de secciones que responde a lo que su cliente busca pr
 - La **portada** dice en una frase qué hace el negocio y dónde, y lleva el botón principal.
 - El **botón principal** se repite tres veces: en la portada, a mitad de página y al final.
 - Si el contacto es por WhatsApp, va un **botón flotante** en la esquina inferior derecha, en todas las pantallas.
-- El **pie de página** lleva nombre, datos de contacto, redes y el crédito de armatuweb.
+- El **pie de página** lleva nombre, datos de contacto, redes y el crédito de Agente Web.
 - Las **reseñas** solo van si son reales, con nombre y fuente (por ejemplo, Google).
 - **Ubicación y horario** van juntos, con el mapa solo si hay dirección pública.
 

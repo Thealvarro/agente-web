@@ -1,4 +1,4 @@
-# armatuweb
+# Agente Web
 
 <img src="docs/assets/armatuweb.webp" width="880" alt="armatuweb: tu página web, paso a paso, con Claude Code. Un proyecto que descargas, abres con Claude Code y, conversando, te guía en 6 fases (conocerte, diseño, contenido, armado, revisión y publicar) hasta tener la página de tu negocio lista.">
 
@@ -10,7 +10,7 @@
 
 ## ¿Qué es?
 
-armatuweb convierte a Claude Code en un **agente que arma páginas web**. Claude Code ya sabe crear archivos, revisarlos y publicarlos; armatuweb le da el método: qué preguntarte, cómo proponerte un diseño, cómo construir la página, cómo revisarla y cómo publicarla, sin saltarse la seguridad.
+Agente Web convierte a Claude Code en un **agente que arma páginas web**. Claude Code ya sabe crear archivos, revisarlos y publicarlos; Agente Web le da el método: qué preguntarte, cómo proponerte un diseño, cómo construir la página, cómo revisarla y cómo publicarla, sin saltarse la seguridad.
 
 Tú conversas. Él pregunta, diseña, construye y revisa. Tú eliges y apruebas.
 
@@ -34,7 +34,7 @@ Tú conversas. Él pregunta, diseña, construye y revisa. Tú eliges y apruebas.
 
 ## Cómo se usa
 
-1. **Descarga el proyecto:** arriba en esta página, botón verde **Code** → **Download ZIP**, y descomprímelo. (Si usas Git: `git clone https://github.com/Thealvarro/armatuweb.git`).
+1. **Descarga el proyecto:** arriba en esta página, botón verde **Code** → **Download ZIP**, y descomprímelo. (Si usas Git: `git clone https://github.com/Thealvarro/agente-web.git`).
 2. **Abre una terminal en la carpeta:**
    - Windows: abre la carpeta, haz clic derecho en un espacio vacío y elige **Abrir en Terminal**.
    - Mac: abre la app Terminal, escribe `cd ` (con un espacio), arrastra la carpeta a la ventana y presiona Enter.
@@ -76,7 +76,7 @@ Tú conversas. Él pregunta, diseña, construye y revisa. Tú eliges y apruebas.
 ## Qué hay adentro
 
 ```
-armatuweb/
+agente-web/
 ├── CLAUDE.md          el método: cómo guía Claude cada fase
 ├── .claude/           los permisos del kit
 ├── docs/              cuestionario, guía de diseño, orden por rubro y checklists
